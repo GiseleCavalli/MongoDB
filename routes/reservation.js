@@ -3,34 +3,41 @@ const { Router } = require('express');
 const express = require('express');
 const router = express.Router();
 
-// RETORNA TODOS OS PEDIDOS
+// RETORNA TODOS AS RESERVAS
 router.get('/', (req, res, next) => {
     res.status(200).send({
-        mensagem: 'Retorna os pedidos.'
+        mensagem: 'Retorna as reservas.'
     });
 });
 
-// INSERE UM PEDIDO
+// INSERE AS RESERVAS
 router.post('/', (req, res, next) => {
     res.status(201).send({
-        mensagem: 'O pedido foi criado.'
+        mensagem: 'A reserva foi criado.'
     });
 });
 
-// RETORNA OS DADOS DE UM PEDIDO
-router.get('/:id_pedido', (req, res, next) => {
+// RETORNA OS DADOS DAS RESERVAS
+router.get('/:id_reserva', (req, res, next) => {
     const id = req.params.id_pedido
     res.status(200).send({
-        mensagem: 'Detalhes do pedido.',
+        mensagem: 'Detalhes da reserva.',
         id_pedido: id
     });
 
 });
 
-// DELETA UM PEDIDO
+// ALTERA AS RESERVAS
+router.patch('/', (req, res, next) => {
+    res.status(201).send({
+        mensagem: 'Altera as reservas.'
+    });
+});
+
+// DELETA AS RESERVAS
 router.delete('/', (req, res, next) => {
     res.status(201).send({
-        mensagem: 'Pedido excluído.'
+        mensagem: 'Reserva excluída.'
     });
 });
 
